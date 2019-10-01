@@ -1,0 +1,14 @@
+     DominosLarge
+     14
+     7.99
+     DominosMedium
+     12
+     6.99 
+    DONE
+Your program should prompt the user each expected input. For example, if you’re expecting the user to input a pizza name, print to console something like “Pizza name: ”.
+Your program should output a number of lines equal to the number of pizzas, and each line is the pizza name and pizza-per-dollar (in2/USD) , which should be set to zero if either diameter or price are
+zero). The lines should be sorted in descending order of pizza-per-dollar, and in the case of a tie, ascending order by pizza name. An example execution of the above input is shown below:
+IMPORTANT: There is no constraint on the number of pizzas, so you may not just allocate space for, say, 10 pizza records; you must accommodate an arbitrary number of pizzas. You must allocate space on the heap for this data. Code that does not accommodate an arbitrary number of pizzas will be penalized (- 75% penalty)! Furthermore, you may NOT first input all names and data into the program to first find out how many pizzas there are and *then* do a single dynamic allocation of heap space.
+      
+may not ask the user at the start how many player records will be typed. Instead, you must dynamically allocate memory on-the-fly as you receive names. To perform dynamic allocation in MIPS assembly, I recommend looking here.
+You’ll also be using floating-point MIPS instructions, which are different from the integer ones we learned. Like many processors, MIPS considers floating point separate from the “real” CPU; it’s instead “co-processor 1”. You can find floating-point-specific operations are here, but if you want to get data in/out of the floating point unit or to take branching decisions based on floating point comparisons, you’ll need instructions like mtc1 (move to coprocessor 1), bc1t (branch if coprocessor 1 comparison is true), etc., which are described here. Also, the different floating point registers have different roles similar to the integer registers (caller-saved, callee-saved, etc.); these are distinguished on the second page of this document. Lastly, as there is no load-immediate instruction for floats, the easiest way to specify a floating point constant such as 𝜋 is to put it in memory as shown below and load it with 1.s
